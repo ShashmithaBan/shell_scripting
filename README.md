@@ -92,19 +92,10 @@ chmod +x aws_resource_list.sh
 chmod +x "List Resources/"*.sh
 
 # List active EC2 instances in current region
-./aws_resource_list.sh --service ec2 --status running
+./aws_resource_list.sh  us-west-2 ec2
 
 # List all S3 buckets in specific region
-./aws_resource_list.sh --service s3 --region us-west-2
-
-# List available RDS instances across multiple regions
-./aws_resource_list.sh --service rds --regions us-east-1,eu-west-1 --status available
-
-# List Lambda functions with environment variables
-./aws_resource_list.sh --service lambda --region ap-southeast-1 --output json
-
-# List resources with specific tags
-./aws_resource_list.sh --service ec2 --region us-east-1 --tags "Environment=Prod,Project=WebApp"
+./aws_resource_list.sh  us-west-2 s3
 ```
 
 ## File Structure
